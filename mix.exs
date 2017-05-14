@@ -8,6 +8,7 @@ defmodule Fx.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      test_coverage: [tool: Coverex.Task],
+     description: description(),
      package: package(),
      deps: deps()]
   end
@@ -35,6 +36,12 @@ defmodule Fx.Mixfile do
       {:poison, "~> 3.1"},
       {:coverex, "~> 1.4.10", only: :test}
     ]
+  end
+
+  defp description do
+    """
+    Simple FX rates library for Elixir
+    """
   end
 
   defp package do
